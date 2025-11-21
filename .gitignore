@@ -1,0 +1,23 @@
+.pio/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.swo
+
+# PlatformIO build artifacts
+**/.pioenvs/
+**/.piolibdeps/
+**/libdeps/
+
+# Compiler outputs
+*.elf
+*.bin
+*.hex
+*.map
+
+# Backup files
+*~
