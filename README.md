@@ -1,0 +1,2 @@
+# IPB2000_2_3data_indicator
+IPB2000-2用3データのインジケータ
