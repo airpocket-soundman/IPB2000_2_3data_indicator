@@ -7,6 +7,28 @@ namespace AppConfig {
 
     // Display settings
     inline constexpr uint8_t DISPLAY_BRIGHTNESS = 200; // 0-255
+    
+    // Wi-Fi settings - 2組のWiFi設定
+    inline const char* WIFI_SSID_1 = "J00WLN1305A";
+    inline const char* WIFI_PASSWORD_1 = "m1n0ru0869553434@LAN";
+    inline const char* WIFI_SSID_2 = "IPB2000-2";
+    inline const char* WIFI_PASSWORD_2 = "minoru0869553434";
+    inline constexpr unsigned long WIFI_CONNECT_TIMEOUT_MS = 30000;  // 30秒
+    inline constexpr unsigned long WIFI_SELECT_TIMEOUT_MS = 5000;    // WiFi選択タイムアウト（5秒）
+    
+    // MQTT settings
+    inline const char* MQTT_BROKER_IP = "192.168.1.65";
+    inline constexpr int MQTT_BROKER_PORT = 1883;
+    inline const char* MQTT_TOPIC_SUBSCRIBE = "toIPB2000-2_display";   // 受信トピック
+    inline const char* MQTT_TOPIC_PUBLISH = "fromIPB2000-2_display";   // 送信トピック
+    inline const char* MQTT_CLIENT_ID = "IPB2000_display_01";
+    inline const char* MQTT_DEVICE_ID = "IPB2000_display_01";  // このデバイスのID
+    
+    // MQTT Data Mapping (JSONキー → データアイテムインデックス)
+    // 例: {"device_id":"IPB2000_display_01","oil_pressure":123.45,"parison_temp":192.8,"injection_time":345.9}
+    inline const char* MQTT_KEY_DATA1 = "oil_pressure";   // データ1: 油圧
+    inline const char* MQTT_KEY_DATA2 = "parison_temp";   // データ2: パリソン温度
+    inline const char* MQTT_KEY_DATA3 = "injection_time"; // データ3: 射出時間（注:injction_timeとスペルミスの可能性あり）
 
     // Data titles
     inline const char* DATA_TITLE_1 = "油圧";
@@ -40,18 +62,7 @@ namespace AppConfig {
     inline constexpr int TEXT_PREVIOUS_OFFSET_X = 30;
     inline constexpr int TEXT_PREVIOUS_OFFSET_Y = 270;
     
-    // フォント設定
-    // 利用可能なフォント:
-    // - lgfxJapanGothic_12, _16, _20, _24, _28, _32, _36, _40
-    // - lgfxJapanMincho_12, _16, _20, _24, _28, _32, _36, _40
-    inline constexpr int FONT_TITLE_SIZE = 40;      // タイトルフォントサイズ
-    inline constexpr int FONT_CURRENT_SIZE = 40;    // 今回値フォントサイズ
-    inline constexpr int FONT_PREVIOUS_SIZE = 40;   // 前回値フォントサイズ
-    
-    // フォントタイプ選択 (0=ゴシック, 1=明朝)
-    inline constexpr int FONT_TYPE = 0;  // 0: Gothic, 1: Mincho
-    
-    // フォント拡大率（setTextSize）
+    // フォント拡大率（setTextSize）- lgfxJapanGothic_40固定
     inline constexpr int FONT_TITLE_SCALE = 2;      // タイトルの拡大率（2倍表示）
     inline constexpr int FONT_VALUE_SCALE = 3;      // 数値の拡大率（3倍表示）
     
